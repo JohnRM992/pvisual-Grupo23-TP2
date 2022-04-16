@@ -21,9 +21,19 @@ public class Principal {
 			case 2:
 					Bisiesto bisiesto = new Bisiesto();
 				break;
-				
+			
+			case 3:
+					Par par = new Par();
+					break;
+			case 4:
+					Mes mes = new Mes();
+					break;
+			case 5:
+				Mes2 mes2 = new Mes2();
+				break;
 			default:
 				System.out.println("Opcion incorrecta");
+				break;
 			
 			}
 	

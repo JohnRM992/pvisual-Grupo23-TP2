@@ -9,7 +9,7 @@ public class Bisiesto {
 		int valor = scanner.nextInt();
 		
 		if ((valor%4==0 && valor%100!=0)||valor%400==0) {
-			
+			System.out.println(valor + " Es bisiesto");
 		}
 		else {
 			System.out.println(valor+ " No es bisiesto");
