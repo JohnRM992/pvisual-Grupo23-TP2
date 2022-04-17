@@ -3,12 +3,12 @@ package fi.unju.edu.ar.ejercicio14;
 import java.util.Date;
 import java.util.Scanner;
 public class Empleado {
-
-	private String nombre;
-	private String email;
-	private String fechaIngreso;
-	private int legajo;
-	private int horasTrabajadas;
+	
+	public String nombre;
+	public String email;
+	public String fechaIngreso;
+	public int legajo;
+	public int horasTrabajadas;
 	public static void main(String[] args) {
 		
 	
@@ -34,6 +34,6 @@ public class Empleado {
 		this.nombre = nombre;
 		this.horasTrabajadas = horasTrabajadas;
 	}
-		Scanner lectura = new Scanner(System.in);
+		
 		
 }
