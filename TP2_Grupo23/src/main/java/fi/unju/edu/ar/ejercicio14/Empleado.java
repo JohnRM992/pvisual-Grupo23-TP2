@@ -1,12 +1,17 @@
 package fi.unju.edu.ar.ejercicio14;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.Scanner;
+
+
+
 public class Empleado {
 	
 	public String nombre;
 	public String email;
 	public String fechaIngreso;
+//	LocalDate fechaIng = LocalDate.of(0, 0, 0);
 	public int legajo;
 	public int horasTrabajadas;
 	public static void main(String[] args) {

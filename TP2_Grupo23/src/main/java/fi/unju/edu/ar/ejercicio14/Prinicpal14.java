@@ -9,6 +9,7 @@ public class Prinicpal14 {
 		
 		unEmpleado.legajo = -9999;
 		unEmpleado.fechaIngreso = "1900-01-01";
+//		unEmpleado.fechaIng = LocalDate.of(1900,01,01);
 		
 		System.out.println(" Su legajo es: " +unEmpleado.legajo);
 		System.out.println(" Su fecha de ingreso es: " +unEmpleado.fechaIngreso);
