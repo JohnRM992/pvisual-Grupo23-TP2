@@ -1,57 +1,161 @@
 package fi.unju.edu.ar.ejercicio13;
 
 import java.util.Scanner;
+
+
 public class Empleado {
+	public String nombre;
+	public String email;
+	public String fechaIngreso;
+	public int legajo;
+	public int horasTrabajadas;
+	
+	
 
-	public static void main(String[] args) {
-		try{
-			Scanner lectura = new Scanner(System.in);
-			System.out.println("Ingrese su nombre: ");
-			
-			String nombre = lectura.nextLine();
-			
-			System.out.println("Ingrese su correo: ");
-			
-			String email = lectura.nextLine();
-			
-			System.out.println("Ingrese su fecha de ingreso (dd/mm/aaaa): ");
-			
-			String fechaIngreso= lectura.nextLine();
-			
-			System.out.println("Ingrese su numero de legajo: ");
-			
-			int legajo = lectura.nextInt();
-			
-			System.out.println("Ingrese la cantidad de horas trabajadas: ");
-			int horasTrabajadas = lectura.nextInt();
-			
-			int pagoPorHora1= 600;
-			int pagoPorHora2= 650;
-			float sueldo;
-			
-			
-			if(horasTrabajadas>160) {
-				sueldo = (pagoPorHora1*horasTrabajadas); 
-			}
-			else {
-				sueldo = (pagoPorHora2*horasTrabajadas);
-			}
-			
-			lectura.close();
-			
-			System.out.println("#######Tus datos#######:");
-			System.out.println("Nombre: "+nombre);
-			System.out.println("Legajo n°: "+legajo);
-			System.out.println("Correo: "+email);
-			System.out.println("Fecha de ingreso: "+fechaIngreso);
-			System.out.println("Tu sueldo es: $"+sueldo);
-			
 
-		}
-		catch
-			(Exception e){System.out.println("Error en alguno de los campos ingresados");
-		}
+	public Empleado(String nombreEmpleado, String emailEmpleado, String fechaIngresoEmpleado, int legajoEmpleado,
+			int horasTrabajadasEmpleado) {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+
+
+	public String getFechaIngreso() {
+		return fechaIngreso;
+	}
+
+
+
+
+	public void setFechaIngreso(String fechaIngreso) {
+		this.fechaIngreso = fechaIngreso;
+	}
+
+
+
+
+	public int getLegajo() {
+		return legajo;
+	}
+
+
+
+
+	public void setLegajo(int legajo) {
+		this.legajo = legajo;
+	}
+
+
+
+
+	public int getHorasTrabajadas() {
+		return horasTrabajadas;
+	}
+
+
+
+
+	public void setHorasTrabajadas(int horasTrabajadas) {
+		this.horasTrabajadas = horasTrabajadas;
+	}
+	
+
+
+
+	public static void main(String[]args) {
+		//variables
+		String nombreEmpleado="";
+		String emailEmpleado="";
+		String fechaIngresoEmpleado="";
+		int legajoEmpleado=0;
+		int horasTrabajadasEmpleado=0;
+		int sueldo = 0;
 		
-	} //fin de main
+		//lecturas de teclado
+		
+		Scanner lectura = new Scanner(System.in);
+		do {
+		System.out.println("Ingrese su nombre: ");
+		nombreEmpleado = lectura.nextLine();
+		}while (nombreEmpleado.equalsIgnoreCase(""));
+		
+		do {
+		System.out.println("Ingrese su correo: ");
+		emailEmpleado = lectura.nextLine();
+		}while (emailEmpleado.equalsIgnoreCase(""));
+		System.out.println("Ingrese la fecha de ingreso (dd-mm-aaaa): ");
+		fechaIngresoEmpleado = lectura.nextLine();
+		
+		do {
+		System.out.println("Ingrese su numero de legajo: ");
+		legajoEmpleado = lectura.nextInt();
+		}while(legajoEmpleado == 0);
+		do {
+		System.out.println("Ingrese las horas trabajadas: ");
+		horasTrabajadasEmpleado = lectura.nextInt();
+		}while(horasTrabajadasEmpleado == 0);
 
+		lectura.close();
+		
+		//calculo del sueldo
+		if (horasTrabajadasEmpleado <= 160) {
+		      sueldo = 600 * horasTrabajadasEmpleado;
+		    } else {
+		      sueldo= (160 * 600) + ((horasTrabajadasEmpleado - 160) * 650);
+		    }
+			
+		//acceso a los metodos,asignacion
+		Empleado empleado = new Empleado(nombreEmpleado,emailEmpleado,fechaIngresoEmpleado,legajoEmpleado,horasTrabajadasEmpleado);
+		empleado.setNombre(nombreEmpleado);
+		empleado.setEmail(emailEmpleado);
+		empleado.setFechaIngreso(fechaIngresoEmpleado);
+		empleado.setLegajo(legajoEmpleado);
+		empleado.setHorasTrabajadas(horasTrabajadasEmpleado);
+		
+		
+		//acceso a los metodos,salida por pantalla
+		System.out.println("Nombre: " +empleado.getNombre());
+		System.out.println("Correo: " +empleado.getEmail());
+		System.out.println("Fecha de ingreso: " +empleado.getFechaIngreso());
+		System.out.println("Numero de legajo: " +empleado.getLegajo());
+		System.out.println("Horas trabajadas: " +empleado.getHorasTrabajadas());
+		System.out.println("Sueldo: $" +sueldo);
+		
+		
+		
+		
+		
+	}
+	
+	
 }
+
