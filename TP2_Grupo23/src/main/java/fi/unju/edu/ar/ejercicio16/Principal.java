@@ -10,9 +10,9 @@ public class Principal {
 		System.out.println("Ingrese n");
 		int entrada = teclado.nextInt();
 		double calculo = CalculoMatematico.calcularSumatoria(entrada);
-		double calculo1 = CalculoMatematico.calcularProductoria(entrada);
+		double prod = CalculoMatematico.calcularProductoria(entrada);
 		System.out.println("Sumatoria = " + calculo);
-		System.out.println("Productoria = " + calculo1);
+		System.out.println("Productoria = " + prod);
 		
 	}
 
