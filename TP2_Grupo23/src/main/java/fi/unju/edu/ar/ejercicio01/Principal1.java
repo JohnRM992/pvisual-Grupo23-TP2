@@ -1,4 +1,4 @@
-package fi.unju.edu.ar.ejercicio1;
+package fi.unju.edu.ar.ejercicio01;
 import java.util.Scanner;
 
 public class Principal1 {
