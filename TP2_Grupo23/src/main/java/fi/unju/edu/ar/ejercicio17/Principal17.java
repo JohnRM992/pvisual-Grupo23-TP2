@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
 import org.springframework.format.datetime.joda.LocalDateParser;
 
@@ -66,7 +68,34 @@ public class Principal17 {
 				  
 		System.out.println("Fecha formateada a String: " + ProcesoFecha.formatearFecha(pf1.fecha2));
 		
+		ProcesoFecha pf5 = new ProcesoFecha();
+		Scanner lectura = new Scanner(System.in);
+
+		//FECHA 1
+		System.out.println("Ingrese una fecha con el siguiente formato(dd/MM/yyyy): ");
+		String ingreso = lectura.nextLine();
 		
+		//Conversion String a LocalDate
+		 DateTimeFormatter convertir = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+		  
+		  LocalDate localDate = LocalDate.parse(ingreso, convertir);
+		  
+		  System.out.println("Convertido a LocalDate: " +localDate);
+		  
+		  pf5.setFecha1(localDate);
+		  LocalDate fechaSuma =  pf5.getFecha1().plusDays(365);
+		  System.out.println("Nueva fecha1: " +fechaSuma);
+		  
+		  //FECHA2
+		  
+		  System.out.println("Ingrese una fecha con el siguiente formato(dd/MM/yyyy): ");
+			ingreso = lectura.nextLine();
+			
+			localDate = LocalDate.parse(ingreso, convertir);
+			pf5.setFecha2(localDate);
+			fechaSuma =  pf5.getFecha2().plusMonths(6);
+			System.out.println("Nueva fecha2: " +fechaSuma);
+			
 		
 	}
 
