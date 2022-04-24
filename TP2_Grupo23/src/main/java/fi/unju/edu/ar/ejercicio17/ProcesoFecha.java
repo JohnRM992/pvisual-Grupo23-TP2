@@ -3,11 +3,14 @@ package fi.unju.edu.ar.ejercicio17;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Month;
 import java.time.Period;
+import java.time.format.DateTimeFormatter;
 
 public class ProcesoFecha {
 
-	LocalDate fecha1, fecha2 = LocalDate.now();
+	LocalDate fecha1= LocalDate.of(1992, 3, 23);
+	LocalDate fecha2 = LocalDate.now();
 	LocalTime time1, time2 = LocalTime.now();
 	LocalDateTime dateTime1, dateTime2 = LocalDateTime.now();
 	
@@ -100,12 +103,23 @@ public class ProcesoFecha {
 		this.dateTime2 = dateTime2;
 	}
 	
-	public static Object contarTiempoTranscurrido(LocalDate fecha1, LocalDate fecha2) {
+	public static Period contarTiempoTranscurrido(LocalDate fecha1, LocalDate fecha2) {
 		
-		//System.out.println(fecha2);
-		//Period period = Period.between(fecha1, fecha2);
 		return Period.between(fecha1, fecha2);
 		
 	}
+	
+	public static String formatearFecha(LocalDate fecha2) {
+		
+		DateTimeFormatter aFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		LocalDate localDateTime = LocalDate.of(2022, Month.MAY, 23);
+		String formatearString = localDateTime.format(aFormatter);
+		 
+		System.out.println("\nFecha original: " + localDateTime);
+
+		return formatearString;
+		
+	}
+	
 	
 }
