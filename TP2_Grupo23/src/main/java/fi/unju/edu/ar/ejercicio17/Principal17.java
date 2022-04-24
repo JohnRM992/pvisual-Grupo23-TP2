@@ -1,6 +1,7 @@
 package fi.unju.edu.ar.ejercicio17;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
 import java.time.Period;
@@ -32,6 +33,27 @@ public class Principal17 {
 
 		LocalDate fecha1 = LocalDate.of(1992, 3, 23) ;
 		LocalDate fecha2 = LocalDate.now() ;
+		
+		//b3
+		
+				String fecha1f = ProcesoFecha.formatearFecha2(pf1.fecha1);
+				String fecha2f = ProcesoFecha.formatearFecha2(pf1.fecha2);
+				
+				System.out.println("\nPunto b3\n");
+				System.out.println(fecha1f);
+				System.out.println(fecha2f);
+				ProcesoFecha.compararFecha(fecha1f,fecha2f);
+		
+		
+		ProcesoFecha pf3 = new ProcesoFecha();
+		pf3.dateTime1 = LocalDateTime.of(LocalDate.of(2022,5,15), LocalTime.now());
+		pf3.dateTime2 = LocalDateTime.of(LocalDate.now(), LocalTime.of(19,22,55,12));
+		System.out.println("\nPunto b4:\n ");
+		System.out.println("dateTime1: \n"+ pf3.dateTime1);
+		System.out.println("dateTime2:  \n"+ pf3.dateTime2);
+							
+		
+		
 
 		new ProcesoFecha();
 		Period pf4 = ProcesoFecha.contarTiempoTranscurrido(fecha1, fecha2);
@@ -44,15 +66,7 @@ public class Principal17 {
 				  
 		System.out.println("Fecha formateada a String: " + ProcesoFecha.formatearFecha(pf1.fecha2));
 		
-		//b3
 		
-		String fecha1f = ProcesoFecha.formatearFecha2(pf1.fecha1);
-		String fecha2f = ProcesoFecha.formatearFecha2(pf1.fecha2);
-		
-		System.out.println("\nPunto b3\n");
-		System.out.println(fecha1f);
-		System.out.println(fecha2f);
-		ProcesoFecha.compararFecha(fecha1f,fecha2f);
 		
 	}
 
