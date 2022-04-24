@@ -2,7 +2,7 @@ package fi.unju.edu.ar.ejercicio16;
 
 import java.util.Scanner;
 
-public class Principal {
+public class Principal16 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

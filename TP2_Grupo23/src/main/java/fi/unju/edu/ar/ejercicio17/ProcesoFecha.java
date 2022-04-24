@@ -3,6 +3,7 @@ package fi.unju.edu.ar.ejercicio17;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.Period;
 
 public class ProcesoFecha {
 
@@ -99,6 +100,12 @@ public class ProcesoFecha {
 		this.dateTime2 = dateTime2;
 	}
 	
-	
+	public static Object contarTiempoTranscurrido(LocalDate fecha1, LocalDate fecha2) {
+		
+		//System.out.println(fecha2);
+		//Period period = Period.between(fecha1, fecha2);
+		return Period.between(fecha1, fecha2);
+		
+	}
 	
 }
