@@ -8,11 +8,14 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 
 public class ProcesoFecha {
-
+	
 	LocalDate fecha1;
 	LocalDate fecha2;
 	LocalTime time1, time2;
 	LocalDateTime dateTime1, dateTime2;
+	
+	String fecha1f;
+	String fecha2f;
 	
 	
 	public ProcesoFecha() {
@@ -118,7 +121,40 @@ public class ProcesoFecha {
 
 		return formatearString;
 		
+
+		
 	}
+	
+	public static String formatearFecha2(LocalDate fechas) {
+		
+		DateTimeFormatter aFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		LocalDate localDateTime = fechas;
+		String formatearString = localDateTime.format(aFormatter);
+		 
+		System.out.println("\nFecha original: " + localDateTime);
+
+		return formatearString;
+		
+
+		
+	}
+	
+	public static void compararFecha(String fecha1f,String fecha2f) {
+		
+		if (fecha1f.compareTo(fecha2f) >0) {
+			System.out.println(fecha1f+ " es mayor");
+			}
+		else {
+			
+			if (fecha1f.compareTo(fecha2f) <0) {
+				System.out.println(fecha2f+ " es mayor");
+				}
+		}
+		if (fecha1f.compareTo(fecha2f)==0) {
+			System.out.println("Son iguales");
+		}
+		
+		}
 
 
 	

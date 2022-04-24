@@ -44,6 +44,16 @@ public class Principal17 {
 				  
 		System.out.println("Fecha formateada a String: " + ProcesoFecha.formatearFecha(pf1.fecha2));
 		
+		//b3
+		
+		String fecha1f = ProcesoFecha.formatearFecha2(pf1.fecha1);
+		String fecha2f = ProcesoFecha.formatearFecha2(pf1.fecha2);
+		
+		System.out.println("\nPunto b3\n");
+		System.out.println(fecha1f);
+		System.out.println(fecha2f);
+		ProcesoFecha.compararFecha(fecha1f,fecha2f);
+		
 	}
 
 }
