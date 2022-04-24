@@ -15,7 +15,6 @@ public class ProcesoFecha {
 	LocalDateTime dateTime1, dateTime2 = LocalDateTime.now();
 	
 	
-	
 	public ProcesoFecha() {
 		super();
 	}
