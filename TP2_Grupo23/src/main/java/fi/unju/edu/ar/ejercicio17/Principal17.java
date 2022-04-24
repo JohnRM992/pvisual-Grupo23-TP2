@@ -36,7 +36,7 @@ public class Principal17 {
 		new ProcesoFecha();
 		Period pf4 = ProcesoFecha.contarTiempoTranscurrido(fecha1, fecha2);
 		
-		System.out.println("\nPunto b6\nHan transcurrido "+
+		System.out.println("\nPunto b5\nHan transcurrido "+
 				  pf4.getYears() + " años, "+ 
 				  pf4.getMonths() + " meses y " + 
 				  pf4.getDays() + " días desde la fecha1 hasta la fecha2");
