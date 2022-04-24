@@ -1,27 +1,48 @@
 package fi.unju.edu.ar.ejercicio17;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.Month;
 import java.time.Period;
+
+import org.springframework.format.datetime.joda.LocalDateParser;
 
 
 public class Principal17 {
 
 	public static void main(String[] args) {
 		
-		LocalDate fecha1= new ProcesoFecha().getFecha1();
-		LocalDate fecha2 = new ProcesoFecha().getFecha2();
-		System.out.println("Fecha inicial: " + fecha1);
-		System.out.println("Fecha final: " + fecha2);
-
-		Period periodo = ProcesoFecha.contarTiempoTranscurrido(fecha1,fecha2);
+		ProcesoFecha pf1= new ProcesoFecha();
 		
-		System.out.println("\nCantidad de años, meses y dias transcurridos de fecha1 a fecha2 \n"+
-				  "Años:" + periodo.getYears() + 
-				  " meses:" + periodo.getMonths() + 
-				  " días:"+periodo.getDays());
+		pf1.fecha1 = LocalDate.of(1992, 3, 10);
+		pf1.fecha2 = LocalDate.of(2022, 4, 23);
+		System.out.println("Punto b1:\nFecha1: " + pf1.fecha1);
+		System.out.println("Fecha2: " + pf1.fecha2);
+		
+		ProcesoFecha pf2 = new ProcesoFecha();
+		pf2.time1 = LocalTime.of(13, 23);
+		pf2.time2 = LocalTime.of(15, 34);
+		System.out.println("Punto b2:\nTime1 original: " + pf2.time1 +
+						   "\nTime2 original: " + pf2.time2);
+		
+		pf2.time1 = pf2.time1.plusHours(5);
+		pf2.time2 = pf2.time2.minusMinutes(20);
+		System.out.println("Time1 sumado 5 horas " + pf2.time1);
+		System.out.println("Time2 restado 20 minutos " + pf2.time2);  
+
+		LocalDate fecha1 = LocalDate.of(1992, 3, 23) ;
+		LocalDate fecha2 = LocalDate.now() ;
+
+		new ProcesoFecha();
+		Period pf4 = ProcesoFecha.contarTiempoTranscurrido(fecha1, fecha2);
+		
+		System.out.println("\nPunto b6\nHan transcurrido "+
+				  pf4.getYears() + " años, "+ 
+				  pf4.getMonths() + " meses y " + 
+				  pf4.getDays() + " días desde la fecha1 hasta la fecha2");
 		
 				  
-		System.out.println("Fecha formateada a String: " + ProcesoFecha.formatearFecha(fecha2));
+		System.out.println("Fecha formateada a String: " + ProcesoFecha.formatearFecha(pf1.fecha2));
 		
 	}
 

@@ -9,10 +9,10 @@ import java.time.format.DateTimeFormatter;
 
 public class ProcesoFecha {
 
-	LocalDate fecha1= LocalDate.of(1992, 3, 23);
-	LocalDate fecha2 = LocalDate.now();
-	LocalTime time1, time2 = LocalTime.now();
-	LocalDateTime dateTime1, dateTime2 = LocalDateTime.now();
+	LocalDate fecha1;
+	LocalDate fecha2;
+	LocalTime time1, time2;
+	LocalDateTime dateTime1, dateTime2;
 	
 	
 	public ProcesoFecha() {
@@ -119,6 +119,8 @@ public class ProcesoFecha {
 		return formatearString;
 		
 	}
+
+
 	
 	
 }
